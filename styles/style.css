@@ -1,0 +1,84 @@
+:root{
+    --black: #000000;
+    --beige: #F4DFC8;
+    --light-beige: #F4EAE0;
+    --white: #FAF6F0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+body{
+    background-color: var(--black);
+    font-family: "Open Sans", sans-serif;
+}
+
+nav{
+    height: 120px;
+    position: relative;
+    text-align: center;
+    background-color: var(--beige);
+}
+
+nav > div{
+    margin-top: 20px;
+    position: absolute;
+    height: 80px;
+}
+
+#shoppingCart, #menu{
+    width: 80px;
+}
+
+#shoppingCart{
+    right: 20px;
+}
+
+#shoppingCart > img{
+    height: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#menu{
+    left: 20px;
+}
+
+#logo{
+    transform: translateX(-50%);
+    width: 400px;
+    left: 50%;
+}
+
+#logo > img{
+    position: absolute;
+    height: 60px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#landingPage{
+    height: 800px;
+    width: 100%;
+    background-image: url(/assets/speakers.jpg);
+    background-position: center;
+    position: relative;
+}
+
+.darken{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#welcomeText{
+    position: absolute;
+    margin-left: 40px;
+    color: var(--light-beige);
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 80px;
+}
