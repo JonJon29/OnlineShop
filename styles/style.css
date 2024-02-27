@@ -12,17 +12,65 @@ body{
     font-family: "Open Sans", sans-serif;
 }
 
+*{
+    transition: all 0.5s ease-out allow-discrete;
+    transition: 200ms linear 50ms;
+}
+
+a{
+    text-decoration: none;
+    color: var(--beige);
+}
+
+#navigation{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: var(--beige);
+    z-index: 1;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.line{
+    position: absolute;
+    top: 120px;
+    height: 5px;
+    border-radius: 40%;
+    background-color: var(--black);
+}
+
+#navigation > a{
+    font-size: 50px;
+    text-decoration: none;
+    color: var(--black);
+}
+
+#navigation > a:hover{
+    color: grey;
+}
+
 nav{
-    height: 120px;
+    height: 100px;
     position: relative;
     text-align: center;
     background-color: var(--beige);
+    z-index: 2;
 }
 
 nav > div{
-    margin-top: 20px;
+    margin-top: 10px;
     position: absolute;
     height: 80px;
+}
+
+.flex{
+    display: flex;
+}
+
+.flexCenter{
+    justify-content: center;
+    align-items: center;
 }
 
 #shoppingCart, #menu{
@@ -35,10 +83,6 @@ nav > div{
 
 #shoppingCart > img{
     height: 60px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 #menu{
@@ -46,17 +90,11 @@ nav > div{
 }
 
 #logo{
-    transform: translateX(-50%);
     width: 400px;
-    left: 50%;
 }
 
 #logo > img{
-    position: absolute;
-    height: 60px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    height: 50px;
 }
 
 #landingPage{
@@ -81,4 +119,128 @@ nav > div{
     top: 50%;
     transform: translateY(-50%);
     font-size: 80px;
+}
+
+.offer{
+    height: 600px;
+    width: 80%;
+    margin: auto;
+    position: relative;
+    background-color: var(--light-beige);
+    border-radius: 20px;
+    padding: 50px;
+}
+
+.infotext{
+    height: 100%;
+    margin-left: 30%;
+    color: var(black);
+    position: relative;
+}
+
+.infotext > h1{
+    width: 100%;
+    text-align: center;
+    font-size: 60px;
+    font-weight: 300;
+}
+
+.infotext > p {
+    font-size: 30px;
+    padding-left: 50px;
+}
+
+.offerImage{
+    width: 30%;
+    max-width: 400px;
+    background-image: url(/assets/cm7.webp);
+    background-position: center;
+    background-size: contain;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0px 0px 50px 0px black;
+}
+
+.offerImage:hover{
+    box-shadow: 0px 0px 50px 2px black;
+}
+
+.dummy{
+    margin-top: 100%;
+}
+
+.absCenterTop{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.absCenterLeft{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.absCenter{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.order{
+    height: 80px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    bottom: 20px;
+    right: 20px;
+}
+
+.order > p{
+    font-size: 43.5px;
+}
+
+.addToCart{
+    position: relative;
+    height: 80px;
+    width: 80px;
+    background-color: var(--beige);
+    border-radius: 20px;
+}
+
+.addToCart:hover{
+    background-color: var(--white);
+    box-shadow: 0px 0px 30px 2px;
+}
+
+.addToCart > img{
+    height: 60px;
+}
+
+#offers > h1{
+    font-weight: 100;
+    font-size: 50px;
+    color: var(--beige); 
+    text-decoration: underline 4px;
+    -webkit-text-decoration-line: underline;
+}
+
+#offers{
+    flex-direction: column;
+    gap: 50px;
+    padding: 0px 10%; 
+}
+
+footer{
+    height: 50px;
+    color: var(--white);
+    font-size: larger;
+    padding: 0px 20px;
+    float: right;
+    gap: 10px;
+    align-items: center;
 }
