@@ -10,6 +10,9 @@
 body{
     background-color: var(--black);
     font-family: "Open Sans", sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
 }
 
 *{
@@ -23,11 +26,18 @@ a{
 }
 
 #navigation{
-    height: 100%;
+    height: 100vh;
     width: 100%;
     position: absolute;
     background-color: var(--beige);
     z-index: 1;
+}
+
+#navigation > div{
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     gap: 30px;
 }
@@ -40,13 +50,13 @@ a{
     background-color: var(--black);
 }
 
-#navigation > a{
+#navigation > div > a{
     font-size: 50px;
     text-decoration: none;
     color: var(--black);
 }
 
-#navigation > a:hover{
+#navigation > div > a:hover{
     color: grey;
 }
 
@@ -58,7 +68,7 @@ nav{
     z-index: 2;
 }
 
-nav > div{
+nav > div, nav > a{
     margin-top: 10px;
     position: absolute;
     height: 80px;
@@ -87,6 +97,10 @@ nav > div{
 
 #menu{
     left: 20px;
+}
+
+#menu:hover{
+    cursor: grab;
 }
 
 #logo{
@@ -221,7 +235,7 @@ nav > div{
     height: 60px;
 }
 
-#offers > h1{
+h1{
     font-weight: 100;
     font-size: 50px;
     color: var(--beige); 
@@ -236,11 +250,18 @@ nav > div{
 }
 
 footer{
-    height: 50px;
+    height: 20px;
     color: var(--white);
-    font-size: larger;
-    padding: 0px 20px;
-    float: right;
+    font-size: 20px;
+    right: 20px;
+    text-align: right;
     gap: 10px;
     align-items: center;
+    bottom: 10px;
+    width: 100%;
+    position: absolute;
+}
+
+.placeholderFooter{
+    height: 50px;
 }

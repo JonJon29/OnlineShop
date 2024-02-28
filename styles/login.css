@@ -1,0 +1,51 @@
+:root{
+    --black: #000000;
+    --beige: #F4DFC8;
+    --light-beige: #F4EAE0;
+    --white: #FAF6F0;
+}
+
+body{
+    height: 100vh !important;
+}
+
+h1{
+    text-align: center;
+}
+
+#loginForm{
+    position: absolute;
+    width: 50%;
+    max-width: 500px;
+}
+
+#loginForm > form > div{
+    flex-direction: column;
+    gap: 50px;
+    width: 100%;
+}
+
+.formNavigation{
+    width: 100%;
+    gap: 20px;
+}
+
+.formNavigation > button{
+    width: 50%;
+}
+
+button, input{
+    height: 50px;
+    border-radius: 20px;
+    width: 100%;
+}
+
+
+button, input[type=submit]{
+    background-color: var(--beige);
+}
+
+button, input[type=submit]:hover{
+    background-color: var(--light-beige);
+    cursor: grab;
+}
