@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <script src="./scripts/navigation.js"></script>
-    <title>AudioVision|Warenkorb</title>
+    <title>AudioVision|Profil</title>
 </head>
 <body>
     <div id="navigation" style="position: absolute; display: none;">
@@ -24,11 +24,11 @@
             <img src="./assets/menu.svg" alt="">
         </div>
         <div id="logo" class="absCenterLeft">
-            <a href="./index.html">
+            <a href="./index.php">
                 <img class="absCenter" src="./assets/logo.svg">
             </a>
         </div>
-        <a href="./cart.html" id="shoppingCart">
+        <a href="./cart.php" id="shoppingCart">
                     <img class="absCenter" src="./assets/shoppingCart.svg" alt="">
         </a>
     </nav>

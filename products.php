@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <script src="./scripts/navigation.js"></script>
-    <title>AudioVision|Impressum</title>
+    <title>AudioVision|Produkte</title>
 </head>
 <body>
     <div id="navigation" style="position: absolute; display: none;">
@@ -32,47 +32,48 @@
                     <img class="absCenter" src="./assets/shoppingCart.svg" alt="">
         </a>
     </nav>
-    <h1>Impressum</h1>
+    <div id="landingPage">
+        <div class="darken">
+            <div id="welcomeText">Unsere Produkte</div>
+        </div>
+    </div>
 
-    <p>
-        Impressum:<br><br>
+    <div id="offers" class="flex">
+        <div class="offer">
+            <div class="offerImage absCenterTop">
+                <div class="dummy"></div>
+            </div>
+            <div class="infotext" style="display: flex; flex-direction: column;">
+                <h1>B&W CM7</h1>
+                <p>- Nautilus <br>- gute Sache</p>
+                <div class="order">
 
-Verantwortlich für den Inhalt dieser Webseite gemäß § 5 TMG:<br><br>
+                    <p>1.200€</p>
+                    <div class="addToCart">
+                        <img class="absCenter" src="./assets/shoppingCart.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="offer">
+            <div class="offerImage absCenterTop">
+                <div class="dummy"></div>
+            </div>
+            <div class="infotext" style="display: flex; flex-direction: column;">
+                <h1>B&W CM7</h1>
+                <p>- Nautilus <br>- gute Sache</p>
+                <div class="order">
 
-AudioVision Lautsprecher GmbH<br>
-Musterstraße 123<br>
-12345 Beispielstadt<br><br>
-
-Vertreten durch:<br>
-Max Mustermann (Geschäftsführer)<br><br>
-
-Kontakt:<br>
-Telefon: +49 (0) 123 456789<br>
-E-Mail: info@audiovision-lautsprecher.de<br><br>
-
-Registereintrag:<br>
-Registergericht: Amtsgericht Beispielstadt<br>
-Registernummer: HRB 12345<br><br>
-
-Umsatzsteuer-ID:<br>
-Umsatzsteuer-Identifikationsnummer gemäß §27a Umsatzsteuergesetz:<br>
-DE 123456789<br><br>
-
-Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:<br>
-Max Mustermann<br>
-Musterstraße 123<br>
-12345 Beispielstadt<br><br>
-
-Haftungshinweis:<br>
-Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.<br><br>
-
-Copyright:<br>
-Alle Texte, Bilder und Grafiken dieser Webseite unterliegen dem deutschen Urheberrecht. Eine Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
-
-    </p>
+                    <p>1.200€</p>
+                    <div class="addToCart">
+                        <img class="absCenter" src="./assets/shoppingCart.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="placeholderFooter"></div>
-
     <footer>
         <a href="./datenschutz.html">Datenschutz</a>
         <a href="./impressum.html">Impressum</a>

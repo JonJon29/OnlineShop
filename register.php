@@ -26,11 +26,11 @@
             <img src="./assets/menu.svg" alt="">
         </div>
         <div id="logo" class="absCenterLeft">
-            <a href="./index.html">
+            <a href="./index.php">
                 <img class="absCenter" src="./assets/logo.svg">
             </a>
         </div>
-        <a href="./cart.html" id="shoppingCart">
+        <a href="./cart.php" id="shoppingCart">
             <img class="absCenter" src="./assets/shoppingCart.svg" alt="">
         </a>
     </nav>

@@ -25,6 +25,10 @@ a{
     color: var(--beige);
 }
 
+p{
+    color: var(--white);
+}
+
 #navigation{
     height: 100vh;
     width: 100%;
@@ -143,6 +147,11 @@ nav > div, nav > a{
     background-color: var(--light-beige);
     border-radius: 20px;
     padding: 50px;
+}
+
+.infotext > h1, .infotext > p, .order > p{
+    color: #000000;
+    text-decoration: none;
 }
 
 .infotext{

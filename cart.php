@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/login.css">
+    <link rel="stylesheet" href="./styles/cart.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <script src="./scripts/navigation.js"></script>
-    <title>AudioVision|Login</title>
+    <title>AudioVision|Warenkorb</title>
 </head>
 <body>
     <div id="navigation" style="position: absolute; display: none;">
@@ -25,29 +25,35 @@
             <img src="./assets/menu.svg" alt="">
         </div>
         <div id="logo" class="absCenterLeft">
-            <a href="./index.html">
+            <a href="./index.php">
                 <img class="absCenter" src="./assets/logo.svg">
             </a>
         </div>
-        <a href="./cart.html" id="shoppingCart">
-            <img class="absCenter" src="./assets/shoppingCart.svg" alt="">
+        <a href="./cart.php" id="shoppingCart">
+                    <img class="absCenter" src="./assets/shoppingCart.svg" alt="">
         </a>
     </nav>
-   
+    <h1>Ihr Einkaufswagen</h1>
 
-    <div id="loginForm" class="absCenter">
-        <h1>Einloggen</h1>
-        <form action="" class="flex flexCenter">
-            <div class="flex flexCenter">
-                <input type="email" placeholder="E-Mail" name="email" id="email">
-                <input type="text" placeholder="Passwort" name="password" id="password">
-                <input type="submit" value="Senden">
-                <a href="./register.html">Noch nicht registriert?</a>
-            </div>
-        </form>
+    <div class="cartProduct flex flexCenter">
+        <h1 class="orderNumber" id="order1">1</h1>
+        <div class="orderImageContainer flex flexCenter">
+            <div class="dummy"></div>
+        </div>
+        <div class="orderInformation flex">
+            <h1>B&W CM7</h1>
+            <p>1.200,-€</p>
+        </div>
+        <div class="orderCount">
+            <select name="count1" id="count1">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
     </div>
-
-
 
     <footer>
         <a href="./datenschutz.html">Datenschutz</a>
