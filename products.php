@@ -79,25 +79,18 @@ function getProducts() {
     $password = "yoursql123";
     $database = "AudioVision";
     
-    // Verbindung aufbauen
     $conn = new mysqli($servername, $username, $password, $database);
     
-    // Verbindung überprüfen
     if ($conn->connect_error) {
         die("Verbindung fehlgeschlagen: " . $conn->connect_error);
     }
     
-    // SQL-Abfrage für den Abruf der Daten
     $sql = "SELECT * FROM Product";
     
-    // SQL-Abfrage ausführen
     $result = $conn->query($sql);
     
-    // Daten verarbeiten (falls vorhanden)
-
     $products = array();
     if ($result->num_rows > 0) {
-        // Daten ausgeben
         while($row = $result->fetch_assoc()) {
             array_push($products, array($row["name"], $row["price"], $row["description"]));
         }
@@ -105,7 +98,6 @@ function getProducts() {
         echo "Keine Daten gefunden.";
     }
     
-    // Verbindung schließen
     $conn->close();
 
     
