@@ -39,38 +39,12 @@
     </div>
 
     <div id="offers" class="flex">
-        <div class="offer">
-            <div class="offerImage absCenterTop">
-                <div class="dummy"></div>
-            </div>
-            <div class="infotext" style="display: flex; flex-direction: column;">
-                <h1>B&W CM7</h1>
-                <p>- Nautilus <br>- gute Sache</p>
-                <div class="order">
-
-                    <p>1.200€</p>
-                    <div class="addToCart">
-                        <img class="absCenter" src="./assets/shoppingCart.svg" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="offer">
-            <div class="offerImage absCenterTop">
-                <div class="dummy"></div>
-            </div>
-            <div class="infotext" style="display: flex; flex-direction: column;">
-                <h1>B&W CM7</h1>
-                <p>- Nautilus <br>- gute Sache</p>
-                <div class="order">
-
-                    <p>1.200€</p>
-                    <div class="addToCart">
-                        <img class="absCenter" src="./assets/shoppingCart.svg" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php
+        $products = getProducts();
+        foreach ($products as $product) {
+            displayProduct($product[0], $product[1], $product[2]);
+        }
+        ?>
     </div>
 
     <div class="placeholderFooter"></div>
@@ -78,5 +52,68 @@
         <a href="./datenschutz.html">Datenschutz</a>
         <a href="./impressum.html">Impressum</a>
     </footer>
+
+<?php
+function displayProduct($name, $price, $description) {
+    echo '<div class="offer"> 
+    <div class="offerImage absCenterTop">
+        <div class="dummy"></div>
+    </div>
+    <div class="infotext" style="display: flex; flex-direction: column;">
+        <h1>' . $name . '</h1>
+        <p>' . $description . '</p>
+        <div class="order">
+
+            <p>' . $price . '€</p>
+            <div class="addToCart">
+                <img class="absCenter" src="./assets/shoppingCart.svg" alt="">
+            </div>
+        </div>
+    </div>
+</div>"';
+}
+
+function getProducts() {
+    $servername = "localhost";
+    $username = "root";
+    $password = "yoursql123";
+    $database = "AudioVision";
+    
+    // Verbindung aufbauen
+    $conn = new mysqli($servername, $username, $password, $database);
+    
+    // Verbindung überprüfen
+    if ($conn->connect_error) {
+        die("Verbindung fehlgeschlagen: " . $conn->connect_error);
+    }
+    
+    // SQL-Abfrage für den Abruf der Daten
+    $sql = "SELECT * FROM Product";
+    
+    // SQL-Abfrage ausführen
+    $result = $conn->query($sql);
+    
+    // Daten verarbeiten (falls vorhanden)
+
+    $products = array();
+    if ($result->num_rows > 0) {
+        // Daten ausgeben
+        while($row = $result->fetch_assoc()) {
+            array_push($products, array($row["name"], $row["price"], $row["description"]));
+        }
+    } else {
+        echo "Keine Daten gefunden.";
+    }
+    
+    // Verbindung schließen
+    $conn->close();
+
+    
+    array_push($products, array("Bow", "123", "Gut"));
+    array_push($products, array("Wil", "234", "sehr gut"));
+    array_push($products, array("Elac", "345", "ncith so gut"));
+    return $products;
+}
+?>
 </body>
 </html>

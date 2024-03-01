@@ -36,9 +36,13 @@
     </nav>
    
 
+    <?php 
+    $showFormular = true;
+    if($showFormular) {
+    ?>
     <div id="loginForm" class="absCenter">
         <h1>Registrieren</h1>
-        <form action="" class="flex flexCenter">
+        <form action="?register=1" class="flex flexCenter">
             <div class="flex flexCenter" id="register1" style="display: flex;">
                 <input type="email" placeholder="E-Mail" name="email" id="email">
                 <input type="text" placeholder="Passwort" name="password" id="password">
@@ -66,7 +70,7 @@
         </form>
     </div>
 
-
+    <?php }?>
 
     <footer>
         <a href="./datenschutz.html">Datenschutz</a>

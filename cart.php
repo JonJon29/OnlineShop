@@ -35,6 +35,13 @@
     </nav>
     <h1>Ihr Einkaufswagen</h1>
 
+    <?php
+    $counter = 1;
+    displayCartItem("Bowers & Wilkins", 1200, 3);
+    displayCartItem("Bowers & Wilkins", 1200, 3);
+    displayCartItem("Bowers & Wilkins", 1200, 3);
+    ?>
+
     <div class="cartProduct flex flexCenter">
         <h1 class="orderNumber" id="order1">1</h1>
         <div class="orderImageContainer flex flexCenter">
@@ -46,7 +53,7 @@
         </div>
         <div class="orderCount">
             <select name="count1" id="count1">
-                <option value="1">1</option>
+                <option value="1" >1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
@@ -59,5 +66,39 @@
         <a href="./datenschutz.html">Datenschutz</a>
         <a href="./impressum.html">Impressum</a>
     </footer>
+
+<?php
+function displayCartItem($name, $price, $amount) {
+    global $counter;
+        echo '<div class="cartProduct flex flexCenter">
+        <h1 class="orderNumber" id="order1">' . $counter . '</h1>
+        <div class="orderImageContainer flex flexCenter">
+            <div class="dummy"></div>
+        </div>
+        <div class="orderInformation flex">
+            <h1>' . $name . '</h1>
+            <p>' . $price . '€</p>
+        </div>
+        <div class="orderCount">
+            <select name="count1" id="count1">
+                ' . generateSelection(5, 3) . '
+            </select>
+        </div>
+    </div>';
+    $counter++;
+    }
+
+    function generateSelection($max, $selected) {
+        $res = "";
+        for($i = 0; $i <= $max; $i++ ) {
+            if($i == $selected){
+                $res .= ' <option value="' . $i . '" selected>' . $i . '</option>';
+            }else{
+                $res .= ' <option value="' . $i . '">' . $i . '</option>';
+            }
+        }
+        return $res;
+    }
+?>
 </body>
 </html>
