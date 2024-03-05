@@ -97,7 +97,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=AudioVision', 'root', 'yoursql123');
             'blz' => $blz, 
             'institut' => $institut, 
             'password' => $passwort_hash,
-            'email'));
+            'email' => $email));
             
             if($result) {        
                 echo 'Du wurdest erfolgreich registriert. <a href="login.php">Zum Login</a>';
