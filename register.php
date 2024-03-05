@@ -99,6 +99,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=AudioVision', 'root', 'yoursql123');
                 'password' => $passwort_hash,
                 'email' => $email);
                 print_r($arr);
+                print($statement);
             $result = $statement->execute($arr);
             
             if($result) {        
