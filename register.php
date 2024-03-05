@@ -55,10 +55,11 @@ $pdo = new PDO('mysql:host=localhost;dbname=AudioVision', 'root', 'yoursql123');
         $blz = $_POST['blz'];
         $institut = $_POST['institut'];
         $email = $_POST['email'];
-        $passwort = $_POST['passwort'];
-        $passwort2 = $_POST['passwort2'];
+        $passwort = $_POST['password1'];
+        $passwort2 = $_POST['password2'];
       
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            echo $email;
             echo 'Bitte eine gültige E-Mail-Adresse eingeben<br>';
             $error = true;
         }     
@@ -113,8 +114,8 @@ $pdo = new PDO('mysql:host=localhost;dbname=AudioVision', 'root', 'yoursql123');
 	<form action="?register=1" class="flex flexCenter">
             <div class="flex flexCenter" id="register1" style="display: flex;">
                 <input type="email" placeholder="E-Mail" name="email" id="email" required>
-                <input type="text" placeholder="Passwort" name="password" id="password" required>
-                <input type="text" placeholder="Passwort wiederholen" name="password-repeate" id="password-repeate" required>
+                <input type="text" placeholder="Passwort" name="password" id="password1" required>
+                <input type="text" placeholder="Passwort wiederholen" name="password2" id="password-repeate" required>
                 <div class="formNavigation flex flexCenter">
                     <button onclick="switchTo(1)">Weiter</button>
                 </div>
