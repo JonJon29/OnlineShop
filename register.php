@@ -110,30 +110,30 @@ $pdo = new PDO('mysql:host=localhost;dbname=AudioVision', 'root', 'yoursql123');
     ?>
     <div id="loginForm" class="absCenter">
         <h1>Registrieren</h1>
-        <form action="?register=1" class="flex flexCenter">
+	<form action="?register=1" class="flex flexCenter">
             <div class="flex flexCenter" id="register1" style="display: flex;">
-                <input type="email" placeholder="E-Mail" name="email" id="email">
-                <input type="text" placeholder="Passwort" name="password" id="password">
-                <input type="text" placeholder="Passwort wiederholen" name="password-repeate" id="password-repeate">
+                <input type="email" placeholder="E-Mail" name="email" id="email" required>
+                <input type="text" placeholder="Passwort" name="password" id="password" required>
+                <input type="text" placeholder="Passwort wiederholen" name="password-repeate" id="password-repeate" required>
                 <div class="formNavigation flex flexCenter">
                     <button onclick="switchTo(1)">Weiter</button>
                 </div>
             </div>
             <div class="flex flexCenter" id="register2" style="display: none;">
-                <input type="text" placeholder="Name" name="name" id="name">
-                <input type="text" placeholder="Nachname" name="lastame" id="lastname">
-                <input type="text" placeholder="Straße" name="street" id="street">
-                <input type="text" placeholder="PLZ" name="zipcode" id="zipcode">
-                <input type="text" placeholder="Ort" name="city" id="city">
+                <input type="text" placeholder="Name" name="name" id="name" required>
+                <input type="text" placeholder="Nachname" name="lastame" id="lastname" required>
+                <input type="text" placeholder="Straße" name="street" id="street" required>
+                <input type="text" placeholder="PLZ" name="zipcode" id="zipcode" required>
+                <input type="text" placeholder="Ort" name="city" id="city" required>
                 <div class="formNavigation flex flexCenter">
                     <button onclick="switchTo(0)">Zurück</button>
                     <button onclick="switchTo(2)">Weiter</button>
                 </div>
             </div>
             <div class="flex flexCenter" id="register3" style="display: none;">
-                <input type="text" placeholder="Kontonummer" name="bankaccount" id="bankaccount">
-                <input type="text" placeholder="BLZ" name="blz" id="blz">
-                <input type="text" placeholder="Institut" name="institut" id="institut">
+                <input type="text" placeholder="Kontonummer" name="bankaccount" id="bankaccount" required>
+                <input type="text" placeholder="BLZ" name="blz" id="blz" required>
+                <input type="text" placeholder="Institut" name="institut" id="institut" required>
                 <div class="flex flexCenter formNavigation">
                     <button onclick="switchTo(1)">Zurück</button>
                     <input type="submit" value="Senden">
