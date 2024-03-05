@@ -87,7 +87,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=AudioVision', 'root', 'yoursql123');
             $passwort_hash = password_hash($passwort, PASSWORD_DEFAULT);
             
             $statement = $pdo->prepare("INSERT INTO Costumer (name, lastname, street, zipcode, city, bankaccount, blz, institut, password, email) VALUES (:name, :lastname, :street, :zipcode, :city, :bankaccount, :blz, :institut, :password, :email)");
-            $result = $statement->execute(array('email' => $email, 
+            $result = $statement->execute(array( 
             'name' => $name,
             'lastname' => $lastname,
             'street' => $street,
