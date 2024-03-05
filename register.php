@@ -90,8 +90,10 @@ $servername = "localhost";
         if(!$error) {    
             $passwort_hash = password_hash($passwort, PASSWORD_DEFAULT);
 
-            $sql = "INSERT INTO Costumer (name, lastname, street, zipcode, city, bankaccount, blz, institut, password, email) VALUES ($name,  $lastname , $street , $zipcode , $city , $bankaccount , $blz, $institut , $passwort_hash , $email)";
-            $result = $conn->query($sql);
+            $sql = "INSERT INTO Costumer (name, lastname, street, zipcode, city, bankaccount, blz, institut, password, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("ssssssssss", $name, $lastname, $street, $zipcode, $city, $bankaccount, $blz, $institut, $passwort_hash, $email);
+            $result = $stmt->execute();
             echo '("' . $name . '", "' . $lastname . '", "' .$street . '", ' . $zipcode . ', "' . $city . '", ' . $bankaccount . ', ' . $blz . ', "' . $institut . '", "' . $passwort_hash . '", "' . $email . '")';
             echo "This is res" . $result;
             
