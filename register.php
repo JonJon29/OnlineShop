@@ -1,6 +1,11 @@
 <?php 
 session_start();
-$pdo = new PDO('mysql:host=localhost;dbname=AudioVision', 'root', 'yoursql123');
+$servername = "localhost";
+    $username = "root";
+    $password = "yoursql123";
+    $database = "AudioVision";
+    
+    $conn = new mysqli($servername, $username, $password, $database);
 ?>
 
 <!DOCTYPE html>
@@ -73,11 +78,10 @@ $pdo = new PDO('mysql:host=localhost;dbname=AudioVision', 'root', 'yoursql123');
         }
         
         if(!$error) { 
-            $statement = $pdo->prepare("SELECT * FROM users WHERE email = :email");
-            $result = $statement->execute(array('email' => $email));
-            $user = $statement->fetch();
+            $sql = "SELECT * FROM users WHERE email = $email";
+            $result = $conn->query($sql);
             
-            if($user !== false) {
+            if($result->num_rows > 0) {
                 echo 'Diese E-Mail-Adresse ist bereits vergeben<br>';
                 $error = true;
             }    
@@ -85,7 +89,11 @@ $pdo = new PDO('mysql:host=localhost;dbname=AudioVision', 'root', 'yoursql123');
         
         if(!$error) {    
             $passwort_hash = password_hash($passwort, PASSWORD_DEFAULT);
+
+            $sql = "INSERT INTO Costumer (name, lastname, street, zipcode, city, bankaccount, blz, institut, password, email) VALUES ($name, $lastname, $street, $zipcode, $city, $bankaccount, $blz, $institut, $password_hash, $email)";
+            $result = $conn->query($sql);
             
+            /*  
             $statement = $pdo->prepare("INSERT INTO Costumer (name, lastname, street, zipcode, city, bankaccount, blz, institut, password, email) VALUES (:name, :lastname, :street, :zipcode, :city, :bankaccount, :blz, :institut, :password, :email)");
             $arr = array( 
                 'name' => $name,
@@ -101,6 +109,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=AudioVision', 'root', 'yoursql123');
                 print_r($arr);
                 echo "This is the statement" . $statement;
             $result = $statement->execute($arr);
+            */
             
             if($result) {        
                 echo 'Du wurdest erfolgreich registriert. <a href="login.php">Zum Login</a>';
