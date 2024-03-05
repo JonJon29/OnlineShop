@@ -92,7 +92,7 @@ $servername = "localhost";
 
             $sql = "INSERT INTO Costumer (name, lastname, street, zipcode, city, bankaccount, blz, institut, password, email) VALUES ($name, $lastname, $street, $zipcode, $city, $bankaccount, $blz, $institut, $password_hash, $email)";
             $result = $conn->query($sql);
-            echo $result;
+            echo "This is res" . $result;
             
             /*  
             $statement = $pdo->prepare("INSERT INTO Costumer (name, lastname, street, zipcode, city, bankaccount, blz, institut, password, email) VALUES (:name, :lastname, :street, :zipcode, :city, :bankaccount, :blz, :institut, :password, :email)");
