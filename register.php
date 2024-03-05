@@ -115,7 +115,9 @@ $pdo = new PDO('mysql:host=localhost;dbname=AudioVision', 'root', 'yoursql123');
                 <input type="email" placeholder="E-Mail" name="email" id="email">
                 <input type="text" placeholder="Passwort" name="password" id="password">
                 <input type="text" placeholder="Passwort wiederholen" name="password-repeate" id="password-repeate">
-                <button onclick="switchTo(1)">Weiter</button>
+                <div class="formNavigation flex flexCenter">
+                    <button onclick="switchTo(1)">Weiter</button>
+                </div>
             </div>
             <div class="flex flexCenter" id="register2" style="display: none;">
                 <input type="text" placeholder="Name" name="name" id="name">
