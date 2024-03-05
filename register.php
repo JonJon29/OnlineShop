@@ -59,7 +59,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=AudioVision', 'root', 'yoursql123');
         $passwort2 = $_POST['password2'];
       
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            echo $email;
+            echo $email . "Das ist die Maiukl";
             echo 'Bitte eine gültige E-Mail-Adresse eingeben<br>';
             $error = true;
         }     
