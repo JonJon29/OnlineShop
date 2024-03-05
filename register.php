@@ -125,7 +125,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=AudioVision', 'root', 'yoursql123');
             </div>
             <div class="flex flexCenter" id="register2" style="display: none;">
                 <input type="text" placeholder="Name" name="name" id="name" required>
-                <input type="text" placeholder="Nachname" name="lastame" id="lastname" required>
+                <input type="text" placeholder="Nachname" name="lastname" id="lastname" required>
                 <input type="text" placeholder="Straße" name="street" id="street" required>
                 <input type="text" placeholder="PLZ" name="zipcode" id="zipcode" required>
                 <input type="text" placeholder="Ort" name="city" id="city" required>
