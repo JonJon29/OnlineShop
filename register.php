@@ -46,17 +46,17 @@ $pdo = new PDO('mysql:host=localhost;dbname=AudioVision', 'root', 'yoursql123');
  
     if(isset($_GET['register'])) {
         $error = false;
-        $name = $_POST['name'];
-        $lastname = $_POST['lastname'];
-        $street = $_POST['street'];
-        $zipcode = $_POST['zipcode'];
-        $city = $_POST['city'];
-        $bankaccount = $_POST['bankaccount'];
-        $blz = $_POST['blz'];
-        $institut = $_POST['institut'];
-        $email = $_POST['email'];
-        $passwort = $_POST['password1'];
-        $passwort2 = $_POST['password2'];
+        $name = $_GET['name'];
+        $lastname = $_GET['lastname'];
+        $street = $_GET['street'];
+        $zipcode = $_GET['zipcode'];
+        $city = $_GET['city'];
+        $bankaccount = $_GET['bankaccount'];
+        $blz = $_GET['blz'];
+        $institut = $_GET['institut'];
+        $email = $_GET['email'];
+        $passwort = $_GET['password1'];
+        $passwort2 = $_GET['password2'];
       
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             echo $email . "Das ist die Maiukl";
@@ -111,7 +111,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=AudioVision', 'root', 'yoursql123');
     ?>
     <div id="loginForm" class="absCenter">
         <h1>Registrieren</h1>
-	<form action="?register=1" methode="post" class="flex flexCenter">
+	<form action="?register=1" method="get" class="flex flexCenter">
             <div class="flex flexCenter" id="register1" style="display: flex;">
                 <input type="email" placeholder="E-Mail" name="email" id="email" required>
                 <input type="text" placeholder="Passwort" name="password" id="password1" required>
