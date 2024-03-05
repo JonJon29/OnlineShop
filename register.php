@@ -92,7 +92,7 @@ $servername = "localhost";
 
             $sql = "INSERT INTO Costumer (name, lastname, street, zipcode, city, bankaccount, blz, institut, password, email) VALUES ($name, $lastname, $street, $zipcode, $city, $bankaccount, $blz, $institut, $password_hash, $email)";
             $result = $conn->query($sql);
-            echo "($name, $lastname, $street, $zipcode, $city, $bankaccount, $blz, $institut, $password_hash, $email)";
+            echo "($name, $lastname, $street, $zipcode, $city, $bankaccount, $blz, $institut, $passwort_hash, $email)";
             echo "This is res" . $result;
             
             /*  
