@@ -55,7 +55,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=AudioVision', 'root', 'yoursql123');
         $blz = $_GET['blz'];
         $institut = $_GET['institut'];
         $email = $_GET['email'];
-        $passwort = $_GET['password1'];
+        $passwort = $_GET['password'];
         $passwort2 = $_GET['password2'];
       
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
