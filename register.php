@@ -111,7 +111,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=AudioVision', 'root', 'yoursql123');
     ?>
     <div id="loginForm" class="absCenter">
         <h1>Registrieren</h1>
-	<form action="?register=1" class="flex flexCenter">
+	<form action="?register=1" methode="post" class="flex flexCenter">
             <div class="flex flexCenter" id="register1" style="display: flex;">
                 <input type="email" placeholder="E-Mail" name="email" id="email" required>
                 <input type="text" placeholder="Passwort" name="password" id="password1" required>
