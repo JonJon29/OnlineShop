@@ -116,7 +116,7 @@
         const buttons = document.getElementsByClassName('addToCart');
         for(let i = 0; i < buttons.length; i++){
             button = buttons.item(i);
-            id = button.id;
+            var id = button.id;
             console.log(id);
             button.addEventListener('click', async _ =>
             {
