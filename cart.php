@@ -116,11 +116,11 @@ function displayCartItem($name, $price, $amount) {
     function getCart($costumerID) {
         global $conn;
         $sql = "SELECT * FROM Cart where costumerID = $costumerID";
-        echo $sql;
         $result = $conn->query($sql);
 
         $cartItems = array();
         if($result->num_rows > 0){
+            echo"This is the evidence";
             while($row = $result->fetch_assoc()){
                 array_push( $cartItems, $row['prodID']);
             }
