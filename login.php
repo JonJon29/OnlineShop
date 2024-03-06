@@ -24,7 +24,7 @@ if(isset($_GET['email'])) {
     $email = $_GET['email'];
     $passwort = $_GET['password'];
     
-    $sql = "SELECT * FROM Costumer WHERE email = $email";
+    $sql = 'SELECT * FROM Costumer WHERE email = "' . $email . '"';
     echo "Querry: ". $sql ." ";
     $result = $conn->query($sql);
     if($result->num_rows > 0) {
