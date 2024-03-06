@@ -17,7 +17,7 @@ $password = "yoursql123";
 $database = "AudioVision";
 
 $conn = new mysqli($servername, $username, $password, $database);
-
+echo "Testttt";
 if(isset($_GET['email'])) {
     $email = $_GET['email'];
     $passwort = $_GET['password'];
