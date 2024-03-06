@@ -49,7 +49,7 @@ $servername = "localhost";
     <?php 
     $showFormular = true; 
  
-    if(isset($_GET['register'])) {
+    if(isset($_GET['email'])) {
         $error = false;
         $name = $_GET['name'];
         $lastname = $_GET['lastname'];
