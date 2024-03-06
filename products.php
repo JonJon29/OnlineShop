@@ -121,7 +121,8 @@
             {
                 try
                 {
-                    const response = await fetch('./addToCart.php?prodID=' + id + '', {
+                    url = './addToCart?prodID=' + id;
+                    const response = await fetch(url, {
                         method: 'get',
                     });
                     console.log('Completed!', response);
