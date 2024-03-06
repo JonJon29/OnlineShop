@@ -69,9 +69,9 @@
         <div class="order">
 
             <p>' . $price . '€</p>
-            <div class="addToCart addToCart">
+            <button class="addToCart addToCart">
                 <img class="absCenter" src="./assets/shoppingCart.svg" alt="">
-            </div>
+            </button>
         </div>
     </div>
 </div>"';
