@@ -118,7 +118,7 @@ function displayCartItem($name, $price, $amount) {
         global $conn;
         $sql = "SELECT * FROM Cart where costumerID = $costumerID";
         $result = $conn->query($sql);
-
+        echo"Hello";
         $cartItems = array();
         if($result->num_rows > 0){
             echo"This is the evidence";
