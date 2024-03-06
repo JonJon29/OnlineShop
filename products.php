@@ -70,7 +70,7 @@
 
             <p>' . $price . '€</p>
             <button class="addToCart addToCart" id="' . $prodID . '">
-                <img class="absCenter" src="./assets/shoppingCart.svg" alt="">
+                <img class="absCenter" src="../assets/shoppingCart.svg" alt="">
             </button>
         </div>
     </div>
