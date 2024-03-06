@@ -12,8 +12,8 @@ if (isset($_SESSION["costumerID"]) && isset($_GET['prodID'])){
     $prodID = $_POST['prodID'];
     $costumerID = $_SESSION['costumerID'];
 
-    $sql = 'INSERT INTO Cart VALUES (?, ?)';
-    $stmt = $conn->prepare(sql);
+    $sql = "INSERT INTO Cart VALUES (?, ?)";
+    $stmt = $conn->prepare($sql);
     $stmt->bind_param('ss', $costumerID, $prodID);
     $result = $stmt->execute();
     if ($result) {
