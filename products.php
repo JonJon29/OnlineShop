@@ -122,6 +122,7 @@
             {
                 try
                 {
+                    console.log(id);
                     url = './addToCart?prodID=' + id.toString();
                     console.log(url);
                     const response = await fetch(url, {
