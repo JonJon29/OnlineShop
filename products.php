@@ -123,6 +123,7 @@
                 try
                 {
                     url = './addToCart?prodID=' + id.toString();
+                    console.log(url);
                     const response = await fetch(url, {
                         method: 'get',
                     });
