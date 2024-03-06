@@ -115,6 +115,7 @@ function displayCartItem($name, $price, $amount) {
     }
 
     function getCart($costumerID) {
+        $servername = "localhost";
         $username = "root";
         $password = "yoursql123";
         $database = "AudioVision";
@@ -153,7 +154,12 @@ function displayCartItem($name, $price, $amount) {
     }
 
     function getProduct($prodID) {
-        global $conn;
+        $servername = "localhost";
+        $username = "root";
+        $password = "yoursql123";
+        $database = "AudioVision";
+        
+        $conn = new mysqli($servername, $username, $password, $database);
         $sql = "SELECT * FROM Product WHERE prodID = $prodID";
         $result = $conn->query($sql);
         
