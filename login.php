@@ -7,8 +7,8 @@ $database = "AudioVision";
 $conn = new mysqli($servername, $username, $password, $database);
 
 if(isset($_GET['email'])) {
-    $email = $_POST['email'];
-    $passwort = $_POST['password'];
+    $email = $_GET['email'];
+    $passwort = $_GET['password'];
     
     $sql = "SELECT * FROM Costumer WHERE email = $email";
     $result = $conn->query($sql);
@@ -63,7 +63,7 @@ if(isset($_GET['email'])) {
 
     <div id="loginForm" class="absCenter">
         <h1>Einloggen</h1>
-        <form action="" class="flex flexCenter">
+        <form action="#" method="GET" class="flex flexCenter">
             <div class="flex flexCenter">
                 <input type="email" placeholder="E-Mail" name="email" id="email">
                 <input type="text" placeholder="Passwort" name="password" id="password">
