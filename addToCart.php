@@ -10,7 +10,7 @@ $conn = new mysqli($servername, $username, $password, $database);
 
 if (isset($_SESSION["costumerID"]) && isset($_GET['prodID'])){
     $prodID = $_POST['prodID'];
-    echo $prodID;
+    echo "This is Prod" . $prodID;
     $costumerID = $_SESSION['costumerID'];
     echo "Hier istg gurt";
     $sql = "INSERT INTO Cart (costumerID, prodID) VALUES (?, ?)";
