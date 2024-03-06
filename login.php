@@ -26,13 +26,15 @@ if(isset($_GET['email'])) {
     
     $sql = "SELECT * FROM Costumer WHERE email = $email";
     $result = $conn->query($sql);
-    while($row = $result->fetch_assoc()) {
-        echo "This is Body" . $row;
-        if ($result->num_rows > 0 && password_verify( $passwort, $row["password"]) ) {
-            $_SESSION["costumerID"] = $row['costumerID'];
-            die('Login erfolgreich. Weiter zu <a href="index.php">Startseite</a>');
-        }else{
-            $errorMessage = "E-Mail oder Passwort war ungültig<br>";
+    if($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            echo "This is Body" . $row;
+            if ($result->num_rows > 0 && password_verify( $passwort, $row["password"]) ) {
+                $_SESSION["costumerID"] = $row['costumerID'];
+                die('Login erfolgreich. Weiter zu <a href="index.php">Startseite</a>');
+            }else{
+                $errorMessage = "E-Mail oder Passwort war ungültig<br>";
+            }
         }
     }
     
