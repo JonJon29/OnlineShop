@@ -62,7 +62,7 @@ if(isset($_GET['email'])) {
 
     <div id="loginForm" class="absCenter">
         <h1>Einloggen</h1>
-        <form action="?login=1" method="GET" class="flex flexCenter">
+        <form action="?login=1" method="get" class="flex flexCenter">
             <div class="flex flexCenter">
                 <input type="email" placeholder="E-Mail" name="email" id="email">
                 <input type="text" placeholder="Passwort" name="password" id="password">
