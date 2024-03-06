@@ -11,29 +11,25 @@
 </head>
 <body>
 <?php
+session_start();
 $servername = "localhost";
 $username = "root";
 $password = "yoursql123";
 $database = "AudioVision";
 
 $conn = new mysqli($servername, $username, $password, $database);
-echo "Testttt";
-print_r($_GET['email']);
 if(isset($_GET['email'])) {
-    echo "Hello This is here";
     $email = $_GET['email'];
     $passwort = $_GET['password'];
     
     $sql = 'SELECT * FROM Costumer WHERE email = "' . $email . '"';
-    echo "Querry: ". $sql ." ";
     $result = $conn->query($sql);
     if($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
-            echo "This is Body" . $row;
             if ($result->num_rows > 0 && password_verify( $passwort, $row["password"]) ) {
                 $_SESSION["costumerID"] = $row['costumerID'];
                 header("Location: index.php");
-die();
+                die();
             }else{
                 $errorMessage = "E-Mail oder Passwort war ungültig<br>";
             }
