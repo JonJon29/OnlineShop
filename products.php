@@ -119,9 +119,11 @@
             var id = button.id;
             console.log(id);
             var testing = 5;
-            button.addEventListener('click', async (testing) =>
-            {
-                try
+            button.addEventListener('click', sending(testing));
+        }
+
+        async function sending(id){
+            try
                 {
                     console.log(id);
                     url = './addToCart?prodID=' + id.toString();
@@ -134,7 +136,6 @@
                 {
                     console.error(`Error: ${err}`);
                 }
-            });
         }
 
     </script>
