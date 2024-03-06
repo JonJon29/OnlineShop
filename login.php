@@ -32,7 +32,8 @@ if(isset($_GET['email'])) {
             echo "This is Body" . $row;
             if ($result->num_rows > 0 && password_verify( $passwort, $row["password"]) ) {
                 $_SESSION["costumerID"] = $row['costumerID'];
-                die('Login erfolgreich. Weiter zu <a href="index.php">Startseite</a>');
+                header("Location: 192.168.178.57/OnlineShop/index.php");
+die();
             }else{
                 $errorMessage = "E-Mail oder Passwort war ungültig<br>";
             }
