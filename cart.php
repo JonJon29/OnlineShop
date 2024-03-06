@@ -36,10 +36,23 @@
     <h1>Ihr Einkaufswagen</h1>
 
     <?php
-    $counter = 1;
-    displayCartItem("Bowers & Wilkins", 1200, 3);
-    displayCartItem("Bowers & Wilkins", 1200, 3);
-    displayCartItem("Bowers & Wilkins", 1200, 3);
+    session_start();
+    if (isset($_SESSION["costumerID"])){
+        $costumerID = $_SESSION['costumerID'];
+        $counter = 1;
+
+        $cartItems = getCart($costumerID);
+        foreach ($cartItems as $cartItem){
+            $product = getProduct($cartItem);
+            displayCartItem($product[0], $product[1], $product[2]);
+        }
+
+        displayCartItem("Bowers & Wilkins", 1200, 3);
+        displayCartItem("Bowers & Wilkins", 1200, 3);
+        displayCartItem("Bowers & Wilkins", 1200, 3);
+    }else{
+        echo 'Bitte zuerst <a href="./login.php">Einloggen</a>';
+    }
     ?>
 
     <div class="cartProduct flex flexCenter">
@@ -68,6 +81,16 @@
     </footer>
 
 <?php
+
+$servername = "localhost";
+        $username = "root";
+        $password = "yoursql123";
+        $database = "AudioVision";
+        
+        $conn = new mysqli($servername, $username, $password, $database);
+        if ($conn->connect_error) {
+            die("Verbindung fehlgeschlagen: " . $conn->connect_error);
+        }
 function displayCartItem($name, $price, $amount) {
     global $counter;
         echo '<div class="cartProduct flex flexCenter">
@@ -88,6 +111,23 @@ function displayCartItem($name, $price, $amount) {
     $counter++;
     }
 
+    function getCart($costumerID) {
+        global $conn;
+        $sql = "SELECT * FROM Cart where costumerID = $costumerID";
+        $result = $conn->query($sql);
+
+        $cartItems = array();
+        if($result->num_rows > 0){
+            while($row = $result->fetch_assoc()){
+                array_push( $cartItems, $row['prodID']);
+            }
+        }else{
+            return false;
+        }
+
+        return $cartItems;
+    }
+
     function generateSelection($max, $selected) {
         $res = "";
         for($i = 0; $i <= $max; $i++ ) {
@@ -98,6 +138,24 @@ function displayCartItem($name, $price, $amount) {
             }
         }
         return $res;
+    }
+
+    function getProduct($prodID) {
+        global $conn;
+        $sql = "SELECT * FROM Product WHERE prodID = $prodID";
+        $result = $conn->query($sql);
+        
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                $product =  array($row["name"], $row["price"], $row["description"]);
+            }
+        } else {
+            echo "Keine Daten gefunden.";
+        }
+        
+        $conn->close();
+    
+        return $product;
     }
 ?>
 </body>
