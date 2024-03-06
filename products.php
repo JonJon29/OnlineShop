@@ -114,9 +114,8 @@
     ?>
     <script>
         const buttons = document.getElementsByClassName('addToCart');
-
-        buttons.forEach(button =>
-        {
+        for(let i = 0; i < buttons.length; i++){
+            button = buttons.item(i);
             button.addEventListener('click', async _ =>
             {
                 try
@@ -130,8 +129,7 @@
                     console.error(`Error: ${err}`);
                 }
             });
-
-        });
+        }
 
     </script>
 </body>
