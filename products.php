@@ -44,7 +44,7 @@
         <?php
         $products = getProducts();
         foreach ($products as $product) {
-            displayProduct($product[0], $product[1], $product[2]);
+            displayProduct($product[0], $product[1], $product[2], $product[3]);
         }
         ?>
     </div>
@@ -57,7 +57,7 @@
     <button id="post-btn">Click me</button>
 
     <?php
-    function displayProduct($name, $price, $description)
+    function displayProduct($name, $price, $description, $prodID)
     {
         echo '<div class="offer"> 
     <div class="offerImage absCenterTop">
@@ -69,7 +69,7 @@
         <div class="order">
 
             <p>' . $price . '€</p>
-            <button class="addToCart addToCart">
+            <button class="addToCart addToCart" id="' . $prodID . '">
                 <img class="absCenter" src="./assets/shoppingCart.svg" alt="">
             </button>
         </div>
@@ -97,7 +97,7 @@
         $products = array();
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                array_push($products, array($row["name"], $row["price"], $row["description"]));
+                array_push($products, array($row["name"], $row["price"], $row["description"], $row['prodID']));
             }
         } else {
             echo "Keine Daten gefunden.";
@@ -116,11 +116,12 @@
         const buttons = document.getElementsByClassName('addToCart');
         for(let i = 0; i < buttons.length; i++){
             button = buttons.item(i);
+            id = button.id;
             button.addEventListener('click', async _ =>
             {
                 try
                 {
-                    const response = await fetch('./addToCart.php?prodID=2', {
+                    const response = await fetch('./addToCart.php?prodID=' + id + '', {
                         method: 'get',
                     });
                     console.log('Completed!', response);
