@@ -122,7 +122,7 @@
             button.addEventListener('click', sending(1));
         }
 
-        async function sending(id){
+        function sending(id){
             try
                 {
                     console.log(id);
