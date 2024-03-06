@@ -43,6 +43,7 @@
         $counter = 1;
 
         $cartItems = getCart($costumerID);
+        print_r($cartItems);
         foreach ($cartItems as $cartItem){
             $product = getProduct($cartItem);
             displayCartItem($product[0], $product[1], $product[2]);
