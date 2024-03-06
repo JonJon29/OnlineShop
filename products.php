@@ -117,6 +117,7 @@
         for(let i = 0; i < buttons.length; i++){
             button = buttons.item(i);
             id = button.id;
+            console.log(id);
             button.addEventListener('click', async _ =>
             {
                 try
