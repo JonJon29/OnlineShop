@@ -13,6 +13,7 @@ if(isset($_GET['email'])) {
     $sql = "SELECT * FROM Costumer WHERE email = $email";
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
+    echo $row;
     if ($result->num_rows > 0 && password_verify( $passwort, $row["password"]) ) {
         $_SESSION["costumerID"] = $row['costumerID'];
         die('Login erfolgreich. Weiter zu <a href="index.php">Startseite</a>');
