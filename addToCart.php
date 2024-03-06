@@ -11,7 +11,7 @@ $conn = new mysqli($servername, $username, $password, $database);
 if (isset($_SESSION["costumerID"]) && isset($_GET['prodID'])){
     $prodID = $_POST['prodID'];
     $costumerID = $_SESSION['costumerID'];
-
+    echo "Hier istg gurt";
     $sql = "INSERT INTO Cart VALUES (?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('ss', $costumerID, $prodID);
