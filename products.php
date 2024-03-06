@@ -66,6 +66,9 @@ function displayProduct($name, $price, $description) {
 
             <p>' . $price . '€</p>
             <div class="addToCart">
+            <form action="./addToCart.php" method="post">
+    <input type="submit" name="upvote" value="Upvote" />
+</form>
                 <img class="absCenter" src="./assets/shoppingCart.svg" alt="">
             </div>
         </div>
