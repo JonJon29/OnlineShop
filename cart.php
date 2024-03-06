@@ -44,11 +44,12 @@
 
         $cartItems = getCart($costumerID);
         print_r($cartItems);
-        foreach ($cartItems as $cartItem){
-            $product = getProduct($cartItem);
-            displayCartItem($product[0], $product[1], $product[2]);
+        if($cartItems != false){
+            foreach ($cartItems as $cartItem){
+                $product = getProduct($cartItem);
+                displayCartItem($product[0], $product[1], $product[2]);
+            }
         }
-
         displayCartItem("Bowers & Wilkins", 1200, 3);
         displayCartItem("Bowers & Wilkins", 1200, 3);
         displayCartItem("Bowers & Wilkins", 1200, 3);
