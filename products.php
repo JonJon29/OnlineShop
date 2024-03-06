@@ -113,9 +113,8 @@ function getProducts() {
 
 button.addEventListener('click', async _ => {
   try {     
-    const response = await fetch('./addToCart.php', {
+    const response = await fetch('./addToCart.php?prodID=2', {
       method: 'get',
-      body: {'prodID': 3}
     });
     console.log('Completed!', response);
   } catch(err) {
