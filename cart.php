@@ -38,11 +38,11 @@
     <?php
     session_start();
     if (isset($_SESSION["costumerID"])){
-        echo"Hello";
         $costumerID = $_SESSION['costumerID'];
         $counter = 1;
 
         $cartItems = getCart($costumerID);
+        echo"Hello";
         print_r($cartItems);
         if($cartItems != false){
             foreach ($cartItems as $cartItem){
