@@ -115,7 +115,14 @@ function displayCartItem($name, $price, $amount) {
     }
 
     function getCart($costumerID) {
-        global $conn;
+        $username = "root";
+        $password = "yoursql123";
+        $database = "AudioVision";
+        
+        $conn = new mysqli($servername, $username, $password, $database);
+        if ($conn->connect_error) {
+            die("Verbindung fehlgeschlagen: " . $conn->connect_error);
+        }
         $sql = "SELECT * FROM Cart where costumerID = $costumerID";
         echo $sql;
         $result = $conn->query($sql);
