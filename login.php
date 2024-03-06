@@ -18,7 +18,7 @@ $database = "AudioVision";
 
 $conn = new mysqli($servername, $username, $password, $database);
 echo "Testttt";
-print_r($_GET);
+print_r($_GET['email']);
 if(isset($_GET['email'])) {
     $email = $_GET['email'];
     $passwort = $_GET['password'];
