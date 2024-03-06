@@ -38,6 +38,7 @@
     <?php
     session_start();
     if (isset($_SESSION["costumerID"])){
+        echo"Hello";
         $costumerID = $_SESSION['costumerID'];
         $counter = 1;
 
