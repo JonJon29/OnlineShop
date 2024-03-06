@@ -52,6 +52,7 @@
         <a href="./datenschutz.html">Datenschutz</a>
         <a href="./impressum.html">Impressum</a>
     </footer>
+    <button id="post-btn">Click me</button>
 
 <?php
 function displayProduct($name, $price, $description) {
@@ -66,15 +67,13 @@ function displayProduct($name, $price, $description) {
 
             <p>' . $price . '€</p>
             <div class="addToCart">
-            <form action="./addToCart.php" method="post">
-    <input type="submit" name="upvote" value="Upvote" />
-</form>
                 <img class="absCenter" src="./assets/shoppingCart.svg" alt="">
             </div>
         </div>
     </div>
 </div>"';
 }
+
 
 function getProducts() {
     $servername = "localhost";
@@ -109,5 +108,20 @@ function getProducts() {
     return $products;
 }
 ?>
+<script>
+    const button = document.getElementById('post-btn');
+
+button.addEventListener('click', async _ => {
+  try {     
+    const response = await fetch('./addToCart.php', {
+      method: 'get',
+      body: {'prodID': 3}
+    });
+    console.log('Completed!', response);
+  } catch(err) {
+    console.error(`Error: ${err}`);
+  }
+});
+</script>
 </body>
 </html>
