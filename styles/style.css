@@ -118,7 +118,7 @@ nav > div, nav > a{
 #landingPage{
     height: 800px;
     width: 100%;
-    background-image: url(assets/speakers.jpg);
+    background-image: url(./assets/speakers.jpg);
     background-position: center;
     position: relative;
 }
