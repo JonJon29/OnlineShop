@@ -113,7 +113,7 @@
     }
     ?>
     <script>
-        const buttons = document.getElementsByClassName('addToCart')
+        const buttons = document.getElementsByClassName('addToCart');
 
         buttons.forEach(button =>
         {
