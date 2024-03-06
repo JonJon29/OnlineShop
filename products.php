@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <script src="./scripts/navigation.js"></script>
     <title>AudioVision|Produkte</title>
 </head>
+
 <body>
     <div id="navigation" style="position: absolute; display: none;">
         <div class="flexCenter flex">
@@ -29,7 +31,7 @@
             </a>
         </div>
         <a href="./cart.php" id="shoppingCart">
-                    <img class="absCenter" src="./assets/shoppingCart.svg" alt="">
+            <img class="absCenter" src="./assets/shoppingCart.svg" alt="">
         </a>
     </nav>
     <div id="landingPage">
@@ -54,9 +56,10 @@
     </footer>
     <button id="post-btn">Click me</button>
 
-<?php
-function displayProduct($name, $price, $description) {
-    echo '<div class="offer"> 
+    <?php
+    function displayProduct($name, $price, $description)
+    {
+        echo '<div class="offer"> 
     <div class="offerImage absCenterTop">
         <div class="dummy"></div>
     </div>
@@ -66,61 +69,71 @@ function displayProduct($name, $price, $description) {
         <div class="order">
 
             <p>' . $price . '€</p>
-            <div class="addToCart">
+            <div class="addToCart addToCart">
                 <img class="absCenter" src="./assets/shoppingCart.svg" alt="">
             </div>
         </div>
     </div>
 </div>"';
-}
-
-
-function getProducts() {
-    $servername = "localhost";
-    $username = "root";
-    $password = "yoursql123";
-    $database = "AudioVision";
-    
-    $conn = new mysqli($servername, $username, $password, $database);
-    
-    if ($conn->connect_error) {
-        die("Verbindung fehlgeschlagen: " . $conn->connect_error);
     }
-    
-    $sql = "SELECT * FROM Product";
-    $result = $conn->query($sql);
-    
-    $products = array();
-    if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {
-            array_push($products, array($row["name"], $row["price"], $row["description"]));
+
+
+    function getProducts()
+    {
+        $servername = "localhost";
+        $username = "root";
+        $password = "yoursql123";
+        $database = "AudioVision";
+
+        $conn = new mysqli($servername, $username, $password, $database);
+
+        if ($conn->connect_error) {
+            die("Verbindung fehlgeschlagen: " . $conn->connect_error);
         }
-    } else {
-        echo "Keine Daten gefunden.";
+
+        $sql = "SELECT * FROM Product";
+        $result = $conn->query($sql);
+
+        $products = array();
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                array_push($products, array($row["name"], $row["price"], $row["description"]));
+            }
+        } else {
+            echo "Keine Daten gefunden.";
+        }
+
+        $conn->close();
+
+
+        array_push($products, array("Bow", "123", "Gut"));
+        array_push($products, array("Wil", "234", "sehr gut"));
+        array_push($products, array("Elac", "345", "ncith so gut"));
+        return $products;
     }
-    
-    $conn->close();
+    ?>
+    <script>
+        const buttons = document.getElementsByClassName('addTocCart')
 
+        buttons.forEach(button =>
+        {
+            button.addEventListener('click', async _ =>
+            {
+                try
+                {
+                    const response = await fetch('./addToCart.php?prodID=2', {
+                        method: 'get',
+                    });
+                    console.log('Completed!', response);
+                } catch (err)
+                {
+                    console.error(`Error: ${err}`);
+                }
+            });
 
-    array_push($products, array("Bow", "123", "Gut"));
-    array_push($products, array("Wil", "234", "sehr gut"));
-    array_push($products, array("Elac", "345", "ncith so gut"));
-    return $products;
-}
-?>
-<script>
-    const button = document.getElementById('post-btn');
+        });
 
-button.addEventListener('click', async _ => {
-  try {     
-    const response = await fetch('./addToCart.php?prodID=2', {
-      method: 'get',
-    });
-    console.log('Completed!', response);
-  } catch(err) {
-    console.error(`Error: ${err}`);
-  }
-});
-</script>
+    </script>
 </body>
+
 </html>
