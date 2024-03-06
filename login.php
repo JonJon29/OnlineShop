@@ -1,3 +1,27 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "yoursql123";
+$database = "AudioVision";
+
+$conn = new mysqli($servername, $username, $password, $database);
+
+if(isset($_GET['email'])) {
+    $email = $_POST['email'];
+    $passwort = $_POST['password'];
+    
+    $sql = "SELECT * FROM Costumer WHERE email = $email";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    if ($result->num_rows > 0 && password_verify( $passwort, $row["password"]) ) {
+        $_SESSION["costumerID"] = $row['costumerID'];
+        die('Login erfolgreich. Weiter zu <a href="index.php">Startseite</a>');
+    }else{
+        $errorMessage = "E-Mail oder Passwort war ungültig<br>";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
