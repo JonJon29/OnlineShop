@@ -126,7 +126,7 @@
             try
                 {
                     console.log(id);
-                    url = './addToCart?prodID=' + id.toString();
+                    url = './addToCart.php?prodID=' + id.toString();
                     console.log(url);
                     const response = await fetch(url, {
                         method: 'get',
