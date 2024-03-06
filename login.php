@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="./scripts/navigation.js"></script>
+    <title>AudioVision|Login</title>
+</head>
+<body>
 <?php
 $servername = "localhost";
 $username = "root";
@@ -22,20 +34,6 @@ if(isset($_GET['email'])) {
     }
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/login.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <script src="./scripts/navigation.js"></script>
-    <title>AudioVision|Login</title>
-</head>
-<body>
-
 
     <div id="navigation" style="position: absolute; display: none;">
         <div class="flexCenter flex">
