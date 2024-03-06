@@ -25,6 +25,7 @@ if(isset($_GET['email'])) {
     $passwort = $_GET['password'];
     
     $sql = "SELECT * FROM Costumer WHERE email = $email";
+    echo "Querry: ". $sql ." ";
     $result = $conn->query($sql);
     if($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
