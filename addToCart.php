@@ -8,7 +8,7 @@ $database = "AudioVision";
 
 $conn = new mysqli($servername, $username, $password, $database);
 
-if (isset($_SESSION["costumerID"]) && isset($_POST['prodID'])){
+if (isset($_SESSION["costumerID"]) && isset($_GET['prodID'])){
     $prodID = $_POST['prodID'];
     $costumerID = $_SESSION['costumerID'];
 
