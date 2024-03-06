@@ -119,10 +119,10 @@
             var id = button.id;
             console.log(id);
             var testing = 5;
-            button.addEventListener('click', await sending(testing));
+            button.addEventListener('click', sending(testing));
         }
 
-        async function sending(id){
+        function sending(id){
             try
                 {
                     console.log(id);
