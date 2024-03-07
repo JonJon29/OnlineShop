@@ -46,7 +46,7 @@
             </div>
             <div class="infotext" style="display: flex; flex-direction: column;">
                 <h1>B&W CM7</h1>
-                <p>- Nautilus <br>- gute Sache</p>
+                <p>Gut für professionelle Nutzer</p>
                 <div class="order">
 
                     <p>1.200€</p>
@@ -62,7 +62,7 @@
             </div>
             <div class="infotext" style="display: flex; flex-direction: column;">
                 <h1>B&W CM7</h1>
-                <p>- Nautilus <br>- gute Sache</p>
+                <p>Perfekt für Heimanwender</p>
                 <div class="order">
 
                     <p>1.200€</p>

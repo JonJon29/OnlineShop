@@ -105,10 +105,6 @@
 
         $conn->close();
 
-
-        array_push($products, array("Bow", "123", "Gut"));
-        array_push($products, array("Wil", "234", "sehr gut"));
-        array_push($products, array("Elac", "345", "ncith so gut"));
         return $products;
     }
     ?>
